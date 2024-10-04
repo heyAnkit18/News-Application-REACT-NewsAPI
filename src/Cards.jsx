@@ -16,19 +16,26 @@ const Cards = ({ data }) => {
   return (
     <div className='cards'>
       {/* Iterate over the data */}
-      {data.map((item, index) => (
-        <div className='card' key={index}>
-          <img src={item.urlToImage} alt={item.title} />
-          <div className='cardContent'>
-            <a href={item.url} target='_blank' rel='noopener noreferrer'>
-              {item.title}
-            </a>
-            <p>{item.description}</p>
-            {/* Corrected the onClick event */}
-            <button onClick={() => readMore(item.url)}>Read More</button>
+      {data.map((item, index) => {
+        // Check if urlToImage exists
+        if (!item.urlToImage) {
+          return null; // Skip rendering if there's no image
+        }
+        
+        return (
+          <div className='card' key={index}>
+            <img src={item.urlToImage} alt={item.title} />
+            <div className='cardContent'>
+              <a href={item.url} target='_blank' rel='noopener noreferrer'>
+                {item.title}
+              </a>
+              <p>{item.description}</p>
+              {/* Corrected the onClick event */}
+              <button onClick={() => readMore(item.url)}>Read More</button>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

@@ -49,10 +49,13 @@ const News = () => {
             <p className='top-heading'>Stay updated with trending News</p>
 
             <div className="category-btn">
+                <button onClick={() => handleCategoryClick('Technology')}>Technology</button>
                 <button onClick={() => handleCategoryClick('Sports')}>Sports</button>
                 <button onClick={() => handleCategoryClick('Global')}>Global</button>
                 <button onClick={() => handleCategoryClick('Politics')}>Politics</button>
                 <button onClick={() => handleCategoryClick('Health')}>Health</button>
+                <button onClick={() => handleCategoryClick('Education')}>Education</button>
+                <button onClick={() => handleCategoryClick('Bollywood')}>Bollywood</button>
             </div>
 
             <div>
