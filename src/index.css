@@ -1,3 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+nav {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0 15px;
+}
+
+ul a {
+    text-decoration: none;
+    color: #b30000;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+ul a:hover {
+    color: #8a0000;
+}
+
+
+.searchBar {
+    display: flex;
+    align-items: center;
+}
+
+.searchBar input {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    outline: none;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.searchBar button {
+    padding: 10px 20px;
+    background-color: #b30000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.searchBar button:hover {
+    background-color: #8a0000;
+}
+
+
+.category-btn {
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+.category-btn button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.category-btn button:hover {
+    background-color: #222;
+    transform: scale(1.05);
+}
+
+.category-btn button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Styles for Cards.jsx */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Individual card styling */
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 15px;
+}
+
+.cardContent {
+    text-align: center;
+}
+
+.cardContent a {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    display: block;
+    color: #b30000;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.cardContent p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.cardContent button {
+    padding: 10px 20px;
+    background-color: #b30000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cardContent button:hover {
+    background-color: #8a0000;
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Cards */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+.top-heading {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 
 
