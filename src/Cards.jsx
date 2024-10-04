@@ -5,8 +5,13 @@ const Cards = ({ data }) => {
 
   // Check if data exists and is not null before trying to map it
   if (!data || data.length === 0) {
-    return <p>No news available.</p>;
+    return <p className='no-news'>Oops.. No news available!</p>;
   }
+
+  // Read more functionality with window.open method
+  const readMore = (url) => {
+    window.open(url);
+  };
 
   return (
     <div className='cards'>
@@ -19,7 +24,8 @@ const Cards = ({ data }) => {
               {item.title}
             </a>
             <p>{item.description}</p>
-            <button>Read More</button>
+            {/* Corrected the onClick event */}
+            <button onClick={() => readMore(item.url)}>Read More</button>
           </div>
         </div>
       ))}
