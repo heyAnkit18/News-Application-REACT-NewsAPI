@@ -2,6 +2,21 @@ import React from 'react';
 import Cards from './Cards';
 
 const News = () => {
+
+
+    const API_KEY = "be8ba853b90042a38d21764254e2a8e8"
+
+    const getData = async () => {
+        const response = await fetch(`https://newsapi.org/v2/everything?q=india&apiKey=${API_KEY}`)
+
+        const jsonData = await response.json();
+        console.log(jsonData)
+
+    }
+
+
+
+
     return (
         <div>
             <nav>
@@ -14,7 +29,7 @@ const News = () => {
                 </ul>
                 <div className="searchBar">
                     <input type="text" placeholder="Search news" />
-                    <button>Search</button>
+                    <button onClick={getData}>Search</button>
                 </div>
             </nav>
 
