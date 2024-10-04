@@ -6,6 +6,7 @@ const News = () => {
     // to handle search 
     const [search,setSearch]=useState("india")
 
+    const [newsData, setNewsData] =useState(null)
 
     const API_KEY = "be8ba853b90042a38d21764254e2a8e8"
 
@@ -13,7 +14,8 @@ const News = () => {
         const response = await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`)
 
         const jsonData = await response.json();
-        console.log(jsonData)
+        console.log(jsonData.articles)
+        setNewsData(jsonData.articles)
 
     }
 
@@ -30,7 +32,7 @@ const News = () => {
         <div>
             <nav>
                 <div>
-                    <h1>TOP 100 NEWS</h1>
+                    <h1>Breaking News</h1>
                 </div>
                 <ul>
                     <li><a href="#">All News</a></li>
@@ -52,7 +54,7 @@ const News = () => {
             </div>
 
             <div>
-                <Cards />
+                <Cards data={newsData}/>
             </div>
         </div>
     );
