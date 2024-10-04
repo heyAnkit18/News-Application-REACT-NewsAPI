@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Cards from './Cards';
 
 const News = () => {
@@ -24,6 +24,14 @@ const News = () => {
         setSearch(e.target.value)
 
     }
+
+
+    //to get initial data on home page 
+
+    useEffect(()=>{
+        getData()
+
+    },[])
 
 
 
