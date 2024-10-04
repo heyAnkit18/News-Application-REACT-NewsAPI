@@ -169,3 +169,10 @@ ul a:hover {
         align-items: center;
     }
 }
+
+
+.top-heading {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
