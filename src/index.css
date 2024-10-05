@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #d7d4d4;
 }
 
 
@@ -18,7 +18,7 @@ h1 {
 }
 
 
-nav {
+.nav {
     background-color: #fff;
     padding: 20px;
     display: flex;
@@ -27,27 +27,31 @@ nav {
     border-bottom: 2px solid #ddd;
 }
 
-ul {
+.nav h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.nav ul {
     display: flex;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-ul li {
+.nav ul li {
     margin: 0 15px;
-}
-
-ul a {
-    text-decoration: none;
-    color: #b30000;
+    font-size: 1rem;
     font-weight: 500;
+    color: #b30000;
     cursor: pointer;
 }
 
-ul a:hover {
+.nav ul li:hover {
     color: #8a0000;
 }
-
 
 .searchBar {
     display: flex;
@@ -75,6 +79,7 @@ ul a:hover {
 .searchBar button:hover {
     background-color: #8a0000;
 }
+
 
 
 .category-btn {
@@ -185,6 +190,33 @@ ul a:hover {
 
 /* Responsive Design for Cards */
 @media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .searchBar {
+        margin-top: 15px;
+    }
+
+    .nav h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav ul li {
+        margin: 5px 0;
+    }
+
+    .searchBar input {
+        width: 100%;
+        max-width: 250px;
+    }
+
     .cards {
         flex-direction: column;
         align-items: center;
@@ -209,5 +241,3 @@ ul a:hover {
     font-size: 60px;
     margin-bottom: 20px;
 }
-
-
