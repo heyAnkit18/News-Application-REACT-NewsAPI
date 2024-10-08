@@ -19,7 +19,7 @@ const Cards = ({ data }) => {
       {data.map((item, index) => {
         // Check if urlToImage exists
         if (!item.urlToImage) {
-          return null; // Skip rendering if there's no image
+          return null; 
         }
         
         return (
