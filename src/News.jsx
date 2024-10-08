@@ -1,38 +1,34 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import Cards from './Cards';
 
 const News = () => {
-    // To handle search
+     
     const [search, setSearch] = useState("india");
     const [newsData, setNewsData] = useState(null);
     const API_KEY = "be8ba853b90042a38d21764254e2a8e8";
 
-    // Memoize getData function to avoid recreation on every render
-    const getData = useCallback(async () => {
-        try {
-            const response = await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`);
-            const jsonData = await response.json();
-            console.log(jsonData.articles);
-            setNewsData(jsonData.articles);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    }, [search]);
+    const getData = async () => {
+        const response = await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`);
+        const jsonData = await response.json();
+        console.log(jsonData.articles);
+        setNewsData(jsonData.articles);
+    }
 
-    // Handle input changes in the search bar
     const handleSearch = (e) => {
+        console.log(e.target.value);
         setSearch(e.target.value);
-    };
+    }
 
-    // Fetch initial data on component mount and when search term changes
+    
     useEffect(() => {
         getData();
-    }, [getData]);
+    }, []);
 
-    // Function to handle category button clicks
+    
     const handleCategoryClick = (category) => {
-        setSearch(category); // Set search term to the category
-    };
+        setSearch(category); 
+        getData(); 
+    }
 
     return (
         <div>
@@ -41,7 +37,8 @@ const News = () => {
                     <h1>Breaking News</h1>
                 </div>
                 <ul>
-                    <li>Welcome to Breaking News – Your Ultimate Source for the Latest Headlines!</li>
+                    <li>Welcome to Breaking News – Your Ultimate Source for the Latest Headlines! </li>
+                    
                 </ul>
                 <div className="searchBar">
                     <input type="text" placeholder="Search news" value={search} onChange={handleSearch} />
@@ -69,5 +66,4 @@ const News = () => {
 };
 
 export default News;
-
 
